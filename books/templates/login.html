@@ -1,0 +1,23 @@
+{%extends "index.html"%}
+{%block start %}
+<h1 style="color: purple;">Hi,<span style="color: purple;">Welcome to the Library Management System!</span> </h1>
+
+<div class="container mt-5">
+    <form class = "col-9 mx-auto card p-4 shadow-lg" method = "post" enctype = "multipart/form-data">
+        {% csrf_token%}
+        <h1> Login Page </h1>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">User Name</label>
+          <input name = "name " required type="text" class="form-control" >
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">Password</label>
+          <textarea name = "Password" class="form-control" required ></textarea>
+        </div>
+        <p> Don't have an account  <a href = "/register/">Create Account</a> </p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+</div>
+  {%endblock%}

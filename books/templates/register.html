@@ -1,40 +1,35 @@
-{% extends 'withoutlogin.html' %}
-{% block title %}Register{% endblock %}
-{% block content %}
-<form class='text-center mt-5 container' style="width: 40%;" action='/register' method='POST'>
-     {% for message in get_flashed_messages() %}
-     <div class='alert alert-warning'>
-         <button type='button' class='close' data-dismiss='alert'>&times;</button>
-         {{message}}
-     </div>
-     {% endfor %}
-     <h1 class='display-4 text-center'>Register</h1><br>
-     <div class="input-group mb-3">
-          <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fa fa-user"></i></span>
-          </div>
-          <input type="text" class="form-control" placeholder="Name" name="name" required autofocus>
-      </div>
-     <div class="input-group mb-3">
-         <div class="input-group-prepend">
-             <span class="input-group-text"><i class="fa fa-at"></i></span>
-         </div>
-         <input type="email" class="form-control" placeholder="Email" name="email" required >
-     </div>
-     <div class="input-group mb-3">
-         <div class="input-group-prepend">
-             <span class="input-group-text"><i class="fa fa-lock"></i></span>
-         </div>
-         <input type="password" class="form-control" placeholder="Password" name='password' minlength="8" id="pwd">
-         <div class='input-group-append'>
-             <div class='input-group-text'>
-                 <div class='custom-control custom-switch'>
-                     <input type='checkbox' class='custom-control-input' id='showpwd' name="password" >
-                     <label class='custom-control-label' for='showpwd'></label>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <button class='btn btn-lg btn-primary btn-block' type='submit'>Register</button>
- </form>
+{% extends "index.html"%}
+{% block start %}
+ <div class="container mt-5">
+    <form class = "col-9 mx-auto card p-4 shadow-lg" method = "post" enctype = "multipart/form-data">
+        {% csrf_token%}
+        <h1> Register </h1>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First Name</label>
+          <input name = "firstname " required type="text" class="form-control" >
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <input name = "lastname " required type="text" class="form-control" >
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input name = "username " required type="text" class="form-control" >
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">Password</label>
+          <textarea name = "password" class="form-control" required ></textarea>
+        </div>
+        {% comment %} <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">Confirm Password</label>
+          <textarea name = "Confirm Password" class="form-control" required ></textarea>
+        </div> {% endcomment %}
+        <p> Already have an account  <a href = " ">Login</a> </p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+</div>
 {% endblock %}
