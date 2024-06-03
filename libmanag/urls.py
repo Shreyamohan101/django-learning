@@ -19,8 +19,10 @@ from django.urls import path
 from books.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('books/', books , name = "books"),
+    # path('book/', book , name = "book"),
     path('Details/', student_details , name = "student_details"),
+    path('Details/', student_details , name = "student_details"),
+    path('book_detail/', book_detail, name = "book_detail"),
     path('', login, name='login'),
      path('register/', register, name='register'),
 ]
