@@ -22,5 +22,9 @@ class Borrowing(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
     borrowed_date = models.DateField(auto_now_add=True)
+
+class login(models.Model):
+    username = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
     
     # Add due_date field and logic for tracking overdue books
