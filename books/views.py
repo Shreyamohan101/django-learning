@@ -30,7 +30,7 @@ def register(request):
 
         Member.objects.create(name=f"{firstname} {lastname}", username=username, password=password)
         
-        return redirect('thank_you')
+        return redirect('Thank_you :)')
     return render(request, 'register.html', context={'page': 'Register'})
     #     return redirect ('/register/')
 
@@ -48,7 +48,7 @@ def login(request):
         
         # You can now use the form data (e.g., authenticate the user)
         if Username == 'admin' and password == 'secret':  # Example authentication
-            return HttpResponse("Welcome, admin!")
+            return HttpResponse("Welcome, Admin!")
         else:
             return HttpResponse("Invalid credentials")
 
@@ -73,7 +73,7 @@ def add_book(request):
 
     return render(request, 'add_book.html')
 
-    #  return redirect ('/student_details/')
+    #  return redirect ('/student_details/').
       
     # return render(request, 'student.html', context={'page': 'Details'})
 
