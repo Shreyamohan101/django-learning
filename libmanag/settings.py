@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
 EXTERNAL_APPS = [
     'books',
-    'main'
+    'main',
+    'rest_framework'
 
 ]
 INSTALLED_APPS += EXTERNAL_APPS
