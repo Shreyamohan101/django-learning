@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 EXTERNAL_APPS = [
     'books',
     'main',
+    'home',
     'rest_framework'
 
 ]
